@@ -10,7 +10,7 @@ variable "github_repository" {
 variable "manage_github_oidc_resources" {
   description = "Create/manage GitHub OIDC provider and deploy role (one-time bootstrap)"
   type        = bool
-  default     = false
+  default     = true
 }
 
 locals {
