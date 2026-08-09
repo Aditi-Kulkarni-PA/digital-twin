@@ -43,7 +43,19 @@ resource "aws_iam_role" "github_actions" {
             "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
           }
           StringLike = {
-            "token.actions.githubusercontent.com:sub" = "repo:${var.github_repository}:*"
+            # GitHub can issue branch-based subjects (ref:refs/heads/main)
+            # or environment-based subjects (environment:dev/test/prod).
+            # Also allow lowercase owner/repo variants to avoid case mismatch issues.
+            "token.actions.githubusercontent.com:sub" = [
+              "repo:${var.github_repository}:ref:refs/heads/main",
+              "repo:${var.github_repository}:environment:dev",
+              "repo:${var.github_repository}:environment:test",
+              "repo:${var.github_repository}:environment:prod",
+              "repo:${lower(var.github_repository)}:ref:refs/heads/main",
+              "repo:${lower(var.github_repository)}:environment:dev",
+              "repo:${lower(var.github_repository)}:environment:test",
+              "repo:${lower(var.github_repository)}:environment:prod"
+            ]
           }
         }
       }
