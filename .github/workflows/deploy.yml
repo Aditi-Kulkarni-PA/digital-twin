@@ -72,6 +72,9 @@ jobs:
           # Make script executable and run it
           chmod +x scripts/deploy.sh
           ./scripts/deploy.sh ${{ github.event.inputs.environment || 'dev' }}
+        env:
+          TF_VAR_openai_api_key_secret_arn: ${{ secrets.OPENAI_API_KEY_SECRET_ARN }}
+          TF_VAR_openai_model_id: gpt-4.1-mini
           
       - name: Get Deployment URLs
         id: deploy_outputs
