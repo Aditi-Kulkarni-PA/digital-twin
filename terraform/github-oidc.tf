@@ -6,6 +6,11 @@ variable "github_repository" {
   type        = string
 }
 
+locals {
+  github_owner = split("/", var.github_repository)[0]
+  github_repo  = split("/", var.github_repository)[1]
+}
+
 # Note: aws_caller_identity.current is already defined in main.tf
 
 # GitHub OIDC Provider
@@ -55,11 +60,19 @@ resource "aws_iam_role" "github_actions" {
               "repo:${var.github_repository}:environment:dev",
               "repo:${var.github_repository}:environment:test",
               "repo:${var.github_repository}:environment:prod",
+              "repo:${local.github_owner}@*/${local.github_repo}@*:ref:refs/heads/main",
+              "repo:${local.github_owner}@*/${local.github_repo}@*:environment:dev",
+              "repo:${local.github_owner}@*/${local.github_repo}@*:environment:test",
+              "repo:${local.github_owner}@*/${local.github_repo}@*:environment:prod",
               "repo:${lower(var.github_repository)}:*",
               "repo:${lower(var.github_repository)}:ref:refs/heads/main",
               "repo:${lower(var.github_repository)}:environment:dev",
               "repo:${lower(var.github_repository)}:environment:test",
-              "repo:${lower(var.github_repository)}:environment:prod"
+              "repo:${lower(var.github_repository)}:environment:prod",
+              "repo:${lower(local.github_owner)}@*/${lower(local.github_repo)}@*:ref:refs/heads/main",
+              "repo:${lower(local.github_owner)}@*/${lower(local.github_repo)}@*:environment:dev",
+              "repo:${lower(local.github_owner)}@*/${lower(local.github_repo)}@*:environment:test",
+              "repo:${lower(local.github_owner)}@*/${lower(local.github_repo)}@*:environment:prod"
             ]
           }
         }
