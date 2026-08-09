@@ -37,7 +37,10 @@ resource "aws_iam_role" "github_actions" {
         Principal = {
           Federated = aws_iam_openid_connect_provider.github.arn
         }
-        Action = "sts:AssumeRoleWithWebIdentity"
+        Action = [
+          "sts:AssumeRoleWithWebIdentity",
+          "sts:TagSession"
+        ]
         Condition = {
           StringEquals = {
             "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
@@ -47,10 +50,12 @@ resource "aws_iam_role" "github_actions" {
             # or environment-based subjects (environment:dev/test/prod).
             # Also allow lowercase owner/repo variants to avoid case mismatch issues.
             "token.actions.githubusercontent.com:sub" = [
+              "repo:${var.github_repository}:*",
               "repo:${var.github_repository}:ref:refs/heads/main",
               "repo:${var.github_repository}:environment:dev",
               "repo:${var.github_repository}:environment:test",
               "repo:${var.github_repository}:environment:prod",
+              "repo:${lower(var.github_repository)}:*",
               "repo:${lower(var.github_repository)}:ref:refs/heads/main",
               "repo:${lower(var.github_repository)}:environment:dev",
               "repo:${lower(var.github_repository)}:environment:test",
