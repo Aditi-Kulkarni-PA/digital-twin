@@ -35,6 +35,7 @@ jobs:
           role-to-assume: arn:aws:iam::167769273848:role/github-actions-twin-deploy
           role-session-name: github-actions-deploy
           audience: sts.amazonaws.com
+          role-skip-session-tagging: true
           aws-region: ${{ secrets.DEFAULT_AWS_REGION }}
 
       - name: Verify AWS identity
