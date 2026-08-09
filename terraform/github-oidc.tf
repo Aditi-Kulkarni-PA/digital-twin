@@ -4,6 +4,7 @@
 variable "github_repository" {
   description = "GitHub repository in format 'owner/repo'"
   type        = string
+  default     = "Aditi-Kulkarni-PA/digital-twin"
 }
 
 locals {
