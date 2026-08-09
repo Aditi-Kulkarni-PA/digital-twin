@@ -51,6 +51,29 @@ terraform init -input=false \
   -backend-config="dynamodb_table=twin-terraform-locks" \
   -backend-config="encrypt=true"
 
+# One-time cleanup: stop managing bootstrap resources in the main stack state.
+for addr in \
+  aws_s3_bucket.terraform_state[0] \
+  aws_s3_bucket_versioning.terraform_state[0] \
+  aws_s3_bucket_server_side_encryption_configuration.terraform_state[0] \
+  aws_s3_bucket_public_access_block.terraform_state[0] \
+  aws_dynamodb_table.terraform_locks[0] \
+  aws_iam_openid_connect_provider.github[0] \
+  aws_iam_role.github_actions[0] \
+  aws_iam_role_policy.github_additional[0] \
+  aws_iam_role_policy_attachment.github_lambda[0] \
+  aws_iam_role_policy_attachment.github_s3[0] \
+  aws_iam_role_policy_attachment.github_apigateway[0] \
+  aws_iam_role_policy_attachment.github_cloudfront[0] \
+  aws_iam_role_policy_attachment.github_iam_read[0] \
+  aws_iam_role_policy_attachment.github_bedrock[0] \
+  aws_iam_role_policy_attachment.github_dynamodb[0] \
+  aws_iam_role_policy_attachment.github_acm[0] \
+  aws_iam_role_policy_attachment.github_route53[0]
+do
+  terraform state rm "$addr" >/dev/null 2>&1 || true
+done
+
 # Use prod.tfvars for production environment
 TF_COMMON_VARS=(
   -var="project_name=$PROJECT_NAME"
