@@ -1,0 +1,35 @@
+{
+  "full_name": "Aditi Kulkarni",
+  "name": "Aditi",
+  "current_role": "AI Researcher",
+  "location": "Bangalore, India",
+  "email": "aditi.murali@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/aditi-kulkarni-technology-transformation/",
+  "specialties": [
+    "Master Data Architect",
+    "AI Research",
+    "Data Strategy",
+    "AgentOps",
+    "AI Engineering",
+    "Technology Leadership",
+    "Transformation Strategy"
+  ],
+  "years_experience": 28,
+  "education": [
+    {
+      "degree": "B.E (Computer Science) University Top Rank Holder",
+      "institution": "University of Mumbai",
+      "year": "1998"
+    },
+    {
+      "degree": "Post Graduate Executive Diploma in AI & ML - Generative AI Specialization",
+      "institution": "International Institute of Information Technology, Bangalore (IIITB)",
+      "year": "2026"
+    },
+    {
+      "degree": "Pursuing Masters in AI & ML - Generative AI Specialization",
+      "institution": "Liverpool John Moores University, UK",
+      "year": "2027"
+    }
+  ]
+}

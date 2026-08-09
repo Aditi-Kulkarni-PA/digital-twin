@@ -1,0 +1,13 @@
+project_name             = "twin"
+environment              = "dev"
+bedrock_model_id         = "amazon.nova-micro-v1:0"
+openai_model_id          = "gpt-4.1-mini"
+openai_api_key           = ""
+openai_api_key_secret_arn = ""
+lambda_timeout           = 60
+api_throttle_burst_limit = 10
+api_throttle_rate_limit  = 5
+use_custom_domain        = false
+enable_cloudfront        = false
+cors_origins             = "*"
+root_domain              = ""

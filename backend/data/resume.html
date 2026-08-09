@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aditi Kulkarni — Executive Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+<style>
+:root{
+--font-sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+--font-voice:Georgia,'Times New Roman',serif;
+--surface-1:#F6F7F9;--surface-2:#FFFFFF;
+--border:#E4E6EA;--border-strong:#CDD1D7;--border-accent:#A9C3EE;
+--text-primary:#1B1E23;--text-secondary:#565B62;--text-muted:#8B9098;
+--fill-pro:#6E62E6;--on-pro:#FFFFFF;
+--text-success:#177A55;--bg-success:#E3F4EC;
+--radius:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#EBEEF2}
+body{font-family:var(--font-sans);-webkit-font-smoothing:antialiased;color:var(--text-primary);padding:1.4rem 1rem 3rem}
+.page{max-width:1140px;margin:0 auto;background:var(--surface-2);border:0.5px solid var(--border);border-radius:20px;box-shadow:0 1px 3px rgba(20,30,60,0.06);padding:0.5rem}
+#app{display:grid;grid-template-columns:250px minmax(0,1fr);gap:16px;padding:1rem;align-items:start}
+#app.unpinned{grid-template-columns:1fr}
+#app.unpinned #pane{display:none}
+.hero,.journey{grid-column:1/-1}
+@media(max-width:660px){#app{grid-template-columns:1fr}}
+.hero{background:var(--surface-1);border:0.5px solid var(--border);border-radius:16px;padding:1.2rem 1.35rem;overflow:hidden}
+.hero-rib{height:5px;margin:-1.2rem -1.35rem 1.15rem;background:linear-gradient(90deg,#9A3AE0 0%,#BE4599 50%,#EC7F68 100%)}
+.hero-top{display:flex;gap:15px;align-items:flex-start}
+.av{width:58px;height:58px;border-radius:16px;background:var(--fill-pro);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600;color:var(--on-pro);flex-shrink:0}
+.h-nm{font-size:23px;font-weight:600;color:var(--text-primary);line-height:1.15}
+.h-tt{font-size:13px;color:var(--text-secondary);margin-top:4px;font-weight:500}
+.h-vo{font-family:var(--font-voice);font-size:13.5px;color:var(--text-secondary);line-height:1.55;margin-top:9px;font-style:italic}
+.ribbon{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin-top:1rem;padding-top:1rem;border-top:0.5px solid var(--border)}
+.rib{background:#16294C;border:0.5px solid rgba(45,212,191,0.30);border-radius:10px;padding:10px 6px 11px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.rib-ic{font-size:16px;margin-bottom:3px;color:#2DD4BF}
+.rib-n{font-size:16px;font-weight:600;color:#F1F5FA;line-height:1.05}
+.rib-l{font-size:9.5px;color:#9DB2CC;line-height:1.25;margin-top:3px}
+.rib-role{display:block;font-size:9px;line-height:1.2;margin-top:2px;font-weight:500;color:#2DD4BF}
+.sect{font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.07em;margin:0 2px 11px;display:flex;align-items:center;gap:8px}
+.sect:before{content:"";width:14px;height:2px;border-radius:2px;background:var(--fill-pro)}
+.eras{display:flex;align-items:center;gap:6px;margin-bottom:11px;flex-wrap:wrap}
+.era{background:var(--surface-2);border:0.5px solid var(--border);border-radius:10px;padding:7px 11px}
+.era.acc{flex:1;min-width:150px}
+.era-c{font-size:12px;font-weight:600;color:var(--text-primary)}
+.era-y{font-size:10px;color:var(--text-muted);margin-top:1px}
+.era-ar{color:var(--border-strong);font-size:15px;display:flex}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:7px}
+.rcard{border:1.5px solid var(--border);border-radius:12px;padding:11px 10px;cursor:pointer;transition:transform .1s;text-align:left}
+.rcard:hover{transform:translateY(-1px)}
+.rcard-ic{font-size:19px;margin-bottom:6px}
+.rcard-from{font-size:9px;color:var(--text-muted);margin-bottom:2px;line-height:1.2}
+.rcard-t{font-size:11.5px;font-weight:600;color:var(--text-primary);line-height:1.25;min-height:29px}
+.rcard-y{font-size:10px;color:var(--text-secondary);margin-top:5px}
+.rcard-m{font-size:10px;color:var(--text-secondary);margin-top:4px;line-height:1.3;padding-top:5px}
+#pane{background:#15284C;border:1px solid #294D79;border-radius:16px;padding:14px;color:#E7EEF6}
+.pane-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.pane-ht{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:#8FA8C6}
+#pane .iconbtn{background:rgba(255,255,255,0.08);border:0.5px solid #3C5F8A;border-radius:6px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#CFE0F0;font-size:14px}
+#pane .iconbtn:hover{background:rgba(255,255,255,0.18)}
+.plabel{font-size:9.5px;font-weight:600;color:#93A7C6;text-transform:uppercase;letter-spacing:0.06em;margin:13px 0 8px;display:flex;align-items:center;gap:6px;padding-top:13px;border-top:2px solid rgba(45,212,191,0.28)}
+.plabel.first{border-top:none;padding-top:2px;margin-top:6px}
+.plabel.tog{cursor:pointer}
+.plabel i{color:#2DD4BF;font-size:13px}
+.chev-skl{margin-left:auto;font-size:14px;transition:transform .15s;color:#93A7C6}
+#sklwrap.col .skl-body{display:none}
+.skl-summary{display:none;font-size:10.5px;color:#9DB6CE;line-height:1.7;padding:3px 0 5px}
+#sklwrap.col .skl-summary{display:block}
+#sklwrap.col .chev-skl{transform:rotate(-90deg)}
+.pgrp{font-size:10.5px;font-weight:600;margin:9px 0 5px;color:#B9C8DC}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{font-size:10.5px;padding:3px 9px;border-radius:20px;border:0.5px solid rgba(45,212,191,0.30);background:rgba(45,212,191,0.09);color:#DCE7F1;line-height:1.4}
+.edu{display:flex;gap:9px;align-items:flex-start;border:0.5px solid rgba(45,212,191,0.26);background:rgba(255,255,255,0.05);border-radius:10px;padding:10px;margin-bottom:7px}
+.edu-ic{font-size:17px;color:#2DD4BF}
+.edu-d{font-size:12px;font-weight:600;color:#F0F5FA;line-height:1.3}
+.edu-i{font-size:10.5px;color:#A9BDD4;margin-top:2px;line-height:1.4}
+.edu-n{font-size:10px;font-weight:600;margin-top:3px;color:#2DD4BF}
+.pat{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.pk{border-radius:8px;padding:8px 4px;text-align:center;border:0.5px solid rgba(45,212,191,0.26);background:rgba(255,255,255,0.05)}
+.pk-n{font-size:16px;font-weight:600;color:#2DD4BF}
+.pk-l{font-size:9px;color:#9DB2CC;margin-top:2px;line-height:1.2}
+.hl{background:rgba(45,212,191,0.10);border:1px solid rgba(45,212,191,0.45);border-radius:12px;padding:0 11px 11px;margin-top:14px}
+.hl .plabel{border-top:none;padding-top:12px;margin-top:0;color:#3FE3CE}
+.hl .plabel i{color:#3FE3CE}
+.hl .pgrp{color:#9BE6D8}
+.aw{display:flex;align-items:baseline;gap:7px;padding:6px 0;border-bottom:0.5px solid rgba(255,255,255,0.12)}
+.aw:last-child{border-bottom:none}
+.aw i{font-size:12px;position:relative;top:1px;flex-shrink:0;color:#3FE3CE}
+.aw-t{font-size:11.5px;font-weight:600;color:#EAF3FA;line-height:1.3}
+.aw-m{font-size:10px;color:#9DB6CE;margin-left:auto;white-space:nowrap;flex-shrink:0;padding-left:4px}
+.vid{margin-top:14px;padding:10px 12px;border-radius:12px;border:1px solid rgba(45,212,191,0.5);background:rgba(45,212,191,0.14);font-size:10.5px;color:#CFE7E2;display:flex;align-items:center;gap:7px;line-height:1.4;text-decoration:none}
+.vid:hover{background:rgba(45,212,191,0.22)}
+.vid i{color:#3FE3CE;font-size:15px}
+.vid .vt{color:#EAFBF6;font-weight:600}
+.reopen{display:inline-flex;align-items:center;gap:6px;font-size:12px;background:var(--surface-1);border:0.5px solid var(--border-strong);border-radius:8px;padding:6px 11px;cursor:pointer;color:var(--text-secondary);margin-bottom:12px}
+.reopen:hover{background:#EEF0F3;color:var(--text-primary)}
+.detail{border:0.5px solid var(--border);border-radius:16px;padding:1.2rem 1.35rem;border-top-width:4px}
+.d-r{font-size:11px;color:var(--text-muted)}
+.d-t{font-size:19px;font-weight:600;color:var(--text-primary);line-height:1.25;margin-top:3px}
+.d-from{color:var(--text-secondary)}
+.d-arrow{color:var(--text-muted);font-weight:400;margin:0 3px}
+.d-h{font-size:13.5px;font-weight:600;color:var(--text-primary);line-height:1.55;margin-top:11px;padding:9px 12px;border-radius:8px}
+.d-s{font-size:12.5px;color:var(--text-secondary);line-height:1.65;margin-top:11px}
+.kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:1rem}
+.kp{border-radius:10px;padding:10px 11px}
+.kn{font-size:18px;font-weight:600;color:var(--text-primary)}
+.kl{font-size:10px;color:var(--text-secondary);margin-top:2px;line-height:1.35}
+.eng-h{font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin:1.25rem 0 8px}
+.eng{border:0.5px solid var(--border);border-radius:10px;margin-bottom:7px;overflow:hidden}
+.eng-top{display:flex;gap:11px;padding:11px 12px;cursor:pointer;align-items:flex-start}
+.eng-strip{width:3px;border-radius:3px;align-self:stretch;flex-shrink:0}
+.eng-main{flex:1;min-width:0}
+.eng-p{font-size:10px;color:var(--text-muted)}
+.eng-t{font-size:12.5px;font-weight:600;color:var(--text-primary);line-height:1.3;margin-top:1px}
+.eng-c{font-size:10.5px;color:var(--text-secondary);margin-top:2px}
+.eng-out{font-size:11px;color:var(--text-success);margin-top:6px;display:flex;gap:6px;align-items:flex-start;line-height:1.45;font-weight:500}
+.eng-out i{font-size:13px;flex-shrink:0;margin-top:1px}
+.eng-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.etag{font-size:9.5px;padding:2px 7px;border-radius:20px;background:var(--surface-1);border:0.5px solid var(--border);color:var(--text-secondary)}
+.eng-side{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}
+.eng-org{font-size:9.5px;padding:2px 6px;border-radius:4px;background:var(--surface-1);border:0.5px solid var(--border);color:var(--text-muted)}
+.eng-ai{font-size:9.5px;padding:2px 6px;border-radius:4px;background:var(--bg-success);color:var(--text-success);font-weight:600;white-space:nowrap}
+.eng-plus{font-size:9.5px;padding:2px 6px;border-radius:4px;border:0.5px solid var(--border-strong);color:var(--text-secondary);font-weight:600;white-space:nowrap}
+.eng-chev{font-size:15px;color:var(--text-muted);transition:transform .15s}
+.eng.open .eng-chev{transform:rotate(180deg)}
+.eng-body{display:none;padding:0 14px 13px 26px}
+.eng.open .eng-body{display:block}
+.eng-sum{font-size:12px;color:var(--text-secondary);line-height:1.6;margin-bottom:9px}
+ul.dl{list-style:none}
+ul.dl li{font-size:12px;color:var(--text-primary);line-height:1.55;padding:4px 0 4px 17px;position:relative}
+</style>
+</head>
+<body>
+<div class="page"><div id="app" class="pinned"></div></div>
+
+<script>
+var VIDEO_URL="https://fb.watch/3Od4VxSzZ1/";
+var CE={era:'#7F77DD'};
+var SKILLS=[
+{g:'Data & AI engineering',items:['Enterprise Data Architecture','Data & Feature Engineering','ETL — Ab Initio / Informatica','SAS','Enterprise Data Warehousing','Teradata','Oracle','BI — Cognos / MicroStrategy','Big Data','Data Modelling']},
+{g:'AI · ML · Gen AI',items:['Machine Learning','Deep Learning','Generative AI','Agentic AI','Large Language Models','MLOps','NLP','Prompt Engineering','RAG']},
+{g:'Cloud & platforms',items:['AWS','GCP','Platform Engineering','DevOps','SAFe Agile']},
+{g:'Leadership',items:['Global Delivery Management','Commercial / P&L','Program Recovery & QA','Solution Architecture','CxO Advisory','Talent Transformation']}
+];
+
+var R=[
+{id:'data',icon:'ti-database',color:'#378ADD',from:'Data Engineer',title:'Master Data Architect',period:'1998 – present',cardm:'10+ F500 data strategies',
+headline:'Hands-on data architect who designed enterprise data-warehouse strategy for 10+ Fortune 500 companies — through the best of data engineering, management and analytics.',
+summary:'A certified Master Data Architect with hands-on expertise across ETL architecture, enterprise DW design, BI platforms and data engineering for AI/ML. Scaled environments from 500GB to 500TB across Financial Services, Insurance and Telecom.',
+kpis:[{n:'10+',l:'Fortune 500 enterprise DW programmes'},{n:'500TB',l:'largest data environment managed (Consumer Finance)'},{n:'20TB/mo',l:'peak data processing scale'}],
+projects:[
+{period:'2021 – 2025',org:'Accenture',client:'Accenture Internal Transformation',aitag:'GenAI · Agentic AI',title:'Agentic-AI Digital Thread',
+tags:['Agentic AI','Digital Thread','Azure AI Foundry','Microsoft Stack'],
+out:'30–50% process efficiency; 20% management efficiency',
+summary:'The Digital Thread connects the end-to-end value chain into one continuous flow of data and AI-driven decisions; the agentic version embeds autonomous AI agents along it. Conceived and led by Aditi on Microsoft Stack and Azure AI Foundry.',
+points:['Conceived and led delivery from concept to production (2021–2025)','Consolidated 15 bespoke apps and 5 solutioning platforms into a single AI-led solutioning platform across workforces and services','Reimagined Sales and Solutioning processes as AI-embedded — driving 30–50% efficiency','Reimagined Delivery Governance as AI-embedded — driving 20% management efficiency','Established Accenture’s AI-native operating model with agentic AI across Sales, Solution, Delivery and Client Value']},
+{period:'2017 – 2018',org:'Accenture',client:'Leading Consumer Finance Company, US',title:'Consumer Finance — 500TB Data Warehouse Recovery',
+tags:['Ab Initio','Exadata','500TB','6 data warehouses','75K jobs/month'],
+out:'Catch-up in 1.5 months; margin turned from −63% to +20%+; client feedback negative → positive',
+summary:'Took over as Recovery Lead for a leading consumer-finance company’s 500TB, 6-warehouse environment (75,000 jobs/month) that had failed from day-1 of a vendor transition — averting penalties and brand risk.',
+points:['Recovered 6 data warehouses / 500TB within 2 months; production catch-up within 1.5 months','Diagnosed root-cause failures across 75,000 inter-dependent DW/BI jobs per month','Improved the architecture to scale for 20TB/month growth; permanent Ab Initio and Exadata fixes','Delivered an Automation Strategy workshop, blueprint and roadmap','Re-solutioned via change order — margin from −63% to +20%+, client feedback negative → positive']},
+{period:'2013 – 2017',org:'Accenture',client:'Accenture FS Data CoP — India Delivery Center',plus1:true,title:'FS Insurance Analytics — Community of Practice Lead',
+tags:['Big Data','BI / ETL','Data Visualisation'],
+out:'+1 role — Role-Based Training Framework across a 1,500-strong FS analytics community',
+summary:'A +1 leadership role strengthening the data and analytics capability across 46 FS insurance engagements and a 1,500-strong data community.',
+points:['Created a Role-Based Training Framework for BigData, Data Visualisation, ETL and Reporting; covered 40% of the analytics population in 5 months','Organised knowledge-sharing across the 1,500+ FS analytics community','70+ people (incl. 29 High Tech Women) certified as Technology Architects across 46 engagements in 2 years']},
+{period:'2005 – 2009',org:'Accenture',client:'Top-3 P&C Insurance Carrier, US',title:'P&C Insurance — Personal Lines Warehouse',
+tags:['Ab Initio','Ab Initio Data Profiler','Teradata','Unix AIX'],
+out:'$1.5M ops + $1.3M/yr savings; 61% effort savings; daily load 10h → 2h; zero defects',
+summary:'Data architect and project manager for the Personal Lines Warehouse — development, maintenance and testing across an 80+ FTE multi-location team.',
+points:['Lead architecture and project management for the Personal Lines Warehouse across an 80+ FTE multi-location team','Property data migration/integration (13,000 PD): 29 days ahead of schedule, 159 PD under budget, zero defects, $1.5M savings','Legacy database sunset (12,000 PD): 2 weeks ahead, 300 PD under budget — $1.3M/yr client savings','Reusable architecture drove 61% effort savings; re-architected DW cut daily load 10h → 2h','45+ monthly releases at 100% SLA; automation lifted coding accuracy to 95–99% and cut test cycle 50%']},
+{period:'2004 – 2005',org:'Accenture',client:'Top Telecom Company, US',title:'US Telecom — Enterprise DW & Data Services',
+tags:['SAS','Cobol','Informatica','Mainframe','Unix'],
+out:'Knowledge transition in 7 weeks; 100% SLA across 3 DW projects',
+summary:'Project Manager for the Data Warehousing programme and its transformation to Informatica across a 25-person team.',
+points:['Project management for 3 projects with a 25-person team in the Data Warehousing initiative','Knowledge-transition lead — completed KT within the 7-week target','Planned and executed monthly version releases with 24×7 production support at 100% SLA']},
+{period:'2002 – 2004',org:'Accenture',client:'Leading Consumer Finance Company, US',title:'Consumer Finance — Enterprise DW Consolidation',
+tags:['Oracle 9i','Ab Initio','SAS 8.x','SPDS'],
+out:'Consolidated 10 Oracle DWs + 11 SAS marts into a single 20TB Oracle 9i EDW',
+summary:'ETL Architect consolidating large data estates into a single enterprise data warehouse, with standardised ETL and 24×7 operations.',
+points:['ETL Architect: functional specs, architecture and design to consolidate 5 warehouses into a 20TB Oracle 9i EDW','Led a 10-developer team building standardised Ab Initio ETL feeds from EDW to SAS data marts','Ran 24×7 service delivery for 10 Oracle data warehouses and 11 SAS data marts with SLA reporting']},
+{period:'2002',org:'SAS Global Services',client:'Telecom Malaysia',title:'Malaysia Telecom — Enterprise Data Warehouse',
+tags:['SAS SPDS','SAS/WA','SAS/MDDB','SAS OLAP','HOLAP'],
+out:'HOLAP at 80GB/month; 19-stacked MDDBs (185/year); reusable CDC macro',
+summary:'ETL Lead building a telecom enterprise data warehouse for customer profiling, call-usage, product-sales and collections analysis.',
+points:['Designed and developed an enterprise-wide DW for customer profiling/segmentation, call usage, product revenue and collections','Built complex call-usage analytics: 80GB/month extraction, HOLAP Stacking & Racking on 40GB/month — 19-stacked MDDBs, 185/year','Created a reusable Change Data Capture (CDC) macro adopted across the platform']},
+{period:'2001',org:'SAS Global Services',client:'SAS Global Vertical Initiative',title:'Telecom Intelligence Solution — Reusable Vertical Product',
+tags:['SAS Macros','SAS/WA','SAS/MDDB','SAS OLAP'],
+out:'Reusable SAS telecom vertical product across 12 analytics domains',
+summary:'ETL Lead building SAS’s Telecom Intelligence Solution — a customer data mart and CRM platform — as part of SAS’s global initiative to build industry vertical solutions.',
+points:['Led ETL for a reusable Telecom vertical solution spanning 12 analytics domains','Domains: customer profitability, marketing & sales, loyalty, distribution of sales, billed/unbilled behaviour, segmentation, churn and market basket','Built strategic maps for a Balanced Scorecard application; packaged as a reusable SAS industry vertical product']},
+{period:'2001',org:'SAS Global Services',client:'Leading Commercial Bank, Greece',title:'Commercial Bank, Greece — Data Cleansing (Pre-Sales)',
+tags:['SAS Data Quality','Cleanse','SAS Macros'],
+out:'Prototype demonstrating data standardisation, de-duplication and merging',
+summary:'Pre-sales consultant building a prototype to demonstrate SAS/Data Quality – Cleanse for customer data cleansing.',
+points:['Built a prototype demonstrating SAS/Data Quality – Cleanse for standardisation, de-duplication and merging of customer data']},
+{period:'2000 – 2001',org:'SAS Global Services',client:'Jamaica Telecom',aitag:'Data · AI · ML',title:'Jamaica Telecom — Customer Data Mart & Feature Engineering',
+tags:['SAS Macros','SAS/WA','SAS/MDDB','Enterprise Guide','Feature Engineering','Market Basket','Fraud / Defaulter'],
+out:'Data & feature layer powering fraud, market-basket and credit-scoring mining',
+summary:'ETL Architect for a 500GB customer data mart and CRM. Aditi did the data engineering and feature engineering that fed downstream mining solutions — credit scoring, market basket analysis and account-defaulter / fraud detection — owning the data and feature layer, not the models.',
+points:['Designed, developed and implemented a 500GB customer data mart and CRM analytics solution','Data engineering and feature engineering feeding mining solutions: credit scoring, market basket analysis, account-defaulter / fraud detection','Covered customer profitability, service revenue & usage, product tariffs & rentals, traffic and carrier in/out-payments']},
+{period:'1998 – 2000',org:'NSE.IT',client:'National Stock Exchange of India',title:'NSE — Enterprise Data Warehouse',
+tags:['Oracle 8.0.5','PL/SQL','Pro*C','500GB'],
+out:'500GB EDW for national market operations at 100% SLA',
+summary:'Application DBA and Warehouse Administrator for a 500GB enterprise data warehouse powering trade, margin and penalty analytics.',
+points:['Application DBA and Warehouse Administrator for a 500GB EDW (trades, deliveries, obligations, funds, margins, penalties)','Data modelling, logical-physical database design and sizing for a 500GB database; volumetric and growth analysis','Performance monitoring/optimisation and migration from Oracle 7 to Oracle 8i']}
+]},
+
+{id:'product',icon:'ti-tool',color:'#1D9E75',title:'Global Asset Engineering Lead',period:'2018 – 2021',cardm:'6 platforms · 69 patents',
+headline:'Led 3,000+ engineers to launch 6 platforms in 3 years; myWizard grew to $4.5B annual sales influence — 4× the prior year.',
+summary:'A product innovator who built and scaled Accenture’s intelligent automation and data-platform portfolio; defines platform strategy, go-to-market and pricing. Backed by 69 personal patents.',
+kpis:[{n:'6',l:'platforms launched in 3 years'},{n:'$4.5B',l:'annual sales influenced by myWizard (4×)'},{n:'180+',l:'patents under her leadership'}],
+projects:[
+{period:'2021 – 2025',org:'Accenture',client:'Accenture Internal Transformation',aitag:'GenAI · Agentic AI',title:'Agentic-AI Digital Thread',
+tags:['Agentic AI','Digital Thread','Azure AI Foundry','Microsoft Stack'],
+out:'30–50% process efficiency; 20% management efficiency',
+summary:'A signature product-engineering initiative: the Digital Thread connects the end-to-end value chain into one continuous, AI-driven flow, with autonomous agents embedded along it. Built on Microsoft Stack and Azure AI Foundry.',
+points:['Conceived and led delivery from concept to production (2021–2025)','Consolidated 15 bespoke apps and 5 solutioning platforms into a single AI-led platform across workforces and services','Reimagined Sales/Solutioning as AI-embedded — 30–50% efficiency; Delivery Governance — 20% management efficiency','Agentic AI workflows across Sales, Solution, Delivery and Client Value','Established Accenture’s AI-native delivery operating model']},
+{period:'2018 – 2021',org:'Accenture',client:'Accenture — Global Platform Portfolio',aitag:'AI · ML · NLP',title:'Global Assets Strategy & Engineering Lead',
+tags:['Platform strategy','Go-to-market','Pricing','3,000+ team'],
+out:'myWizard influenced $4.5B annual sales (4×); 50+ deals, $1B+ personal deal wins',
+summary:'Led Accenture’s global assets engineering organisation — 3,000+ professionals — launching 6 platforms concept-to-launch in 3 years, with a 3× acceleration in patent output.',
+points:['Led 3,000+ professionals across asset engineering, platform development and the automation practice','Launched 6 platforms concept-to-launch in 3 years: myWizard, myDiagnostic, myConcerto, myIndustry, myNav, mySolutionPlanner, myData, myIndustryX','180+ patents filed under her leadership (3× prior period); 69 personal patents / 32 granted; 3 whitepapers','Defined the Automation Platform Strategy, go-to-market and pricing; 50+ deals and $1B+ deal wins','Europe Automation Lead (remote from India): $2B+ annual European sales influence; 100+ advisory originations']},
+{period:'2018 – 2021',org:'Accenture',client:'Accenture Flagship Platform — AI/ML/NLP core',aitag:'AI · ML · NLP',title:'myWizard — Intelligent Automation Platform',
+tags:['AI','ML','NLP','Automation'],
+out:'$4.5B annual sales influence — a 4× increase',
+summary:'Led strategy, engineering and commercialisation of myWizard — Accenture’s flagship intelligent automation platform with AI, ML and NLP at its core.',
+points:['Defined the product vision, roadmap, architecture standards and delivery methodology','AI/ML/NLP capabilities across the application lifecycle: code analysis, testing, monitoring and incident resolution','Scaled to $4.5B annual sales influence — a 4× increase','Anchored 50+ major deal pursuits; the primary CxO and analyst demonstration asset']},
+{period:'2018 – 2021',org:'Accenture',client:'Accenture Platform Portfolio',aitag:'AI · ML · NLP',title:'myNav · myConcerto · myData · myIndustry Suite',
+tags:['Cloud','Data','Industry accelerators'],
+out:'Full intelligent-platform suite adopted globally',
+summary:'Led engineering for the full intelligent platform suite — myNav (cloud navigation), myConcerto (cloud transformation), myData (data intelligence), myIndustry/myIndustryX (accelerators) and mySolutionPlanner.',
+points:['myNav: cloud migration planning; myData: intelligent data architecture and analytics','myConcerto: cloud transformation management platform adopted globally','myIndustry / myIndustryX: industry-specific accelerators embedded in engagements','mySolutionPlanner: AI-assisted deal solution planning adopted by global sales teams']}
+]},
+
+{id:'solutions',icon:'ti-bulb',color:'#D4537E',title:'Global Technology Solutions Lead',period:'2021 – 2023',cardm:'$33B sales · 2,000+ team',
+headline:'Led 2,000+ solution architects to $33B in annual sales wins at a 56% win rate.',
+summary:'A trusted CxO advisor and deal architect who led a 2,000-strong global solutions practice to its best-ever commercial performance, and conceived Value-led Managed Services.',
+kpis:[{n:'$33B',l:'annual sales wins at 56% win rate'},{n:'$10B',l:'Value-led MS in 2 months, 70% win'},{n:'20+',l:'deals shaped personally ($1.5B+)'}],
+projects:[
+{period:'2021 – 2023',org:'Accenture',client:'Accenture — Global Solutions Practice',title:'Global Technology Solutions Lead',
+tags:['2,000+ architects','Solution Architecture','CxO Advisory','GMC'],
+out:'$33B annual sales at 56% win rate; 10–20% cost savings driven',
+summary:'Led Accenture’s global technology solutions function — 2,000+ solution architects delivering $33B in annual sales wins.',
+points:['Led 2,000+ solution architects globally; $33B annual sales at a 56% win rate','Personally shaped 20+ deals ($1.5B+ combined) with direct CxO engagement','Trained 1,500+ global sales, solution and delivery leads on value-led differentiation','Established new solution guidelines; drove 10–20% cost savings and improved competitive pricing','Reusable frameworks, templates and commercial models adopted across the practice']},
+{period:'2021 – 2023',org:'Accenture',client:'Accenture — Global Offering',title:'Value-led Managed Services — New Offering Launch',
+tags:['Managed Services','Commercial model','Offering design'],
+out:'$10B in sales at 70% win rate (vs 56% average); 10–20% cost savings',
+summary:'Conceived and launched Value-led Managed Services — from blank page to enablement in 2 months.',
+points:['Conceived the Value-led Managed Services positioning from scratch to enablement in 2 months','$10B in sales at a 70% win rate','Personally represented the offering in CxO discussions and RFPs globally']},
+{period:'2021 – 2023',org:'Accenture',client:'BT · Roche · Merck KGaA · J&J · Unilever · Nestle · Shell · DSM · AXA',title:'Marquee Global Deals — Telecom, Life Sciences, Consumer & Energy',
+tags:['$1.5B+ combined','9 clients','CxO engagement'],
+out:'$1.5B+ combined deal value across 4 sectors',
+summary:'Personally shaped 20+ large-scale transformation deals with direct CxO engagement across Telecom, Life Sciences, Consumer Goods and Energy.',
+points:['British Telecom: end-to-end deal architecture for a major European telecom transformation','Life Sciences (Roche, Merck KGaA, J&J): managed services and transformation with regulatory context','Consumer Goods (Unilever, Nestle, DSM): cloud migration, data transformation and managed services','Energy (Shell) and Insurance (AXA): sector-specific transformation deal shaping','All anchored on the Value-led Managed Services framework']}
+]},
+
+{id:'delivery',icon:'ti-trending-up',color:'#BA7517',from:'Portfolio Delivery Lead',title:'Global Technology Delivery Lead',period:'2009 – 2025',cardm:'310K+ team · ~8K contracts',
+headline:'310K+ professionals, ~8K contracts and 2,060 clients; 2,200+ go-lives annually.',
+summary:'A delivery executive who has governed technology delivery at every scale — from 200-person client units to 310K+ professionals across 8K global contracts. A certified Quality Assurance Director and repeat recovery specialist who turns troubled engagements from loss to profit.',
+kpis:[{n:'310K+',l:'professionals governed globally'},{n:'~8K',l:'contracts across 2,060 clients'},{n:'2,200+',l:'business go-lives per year'}],
+projects:[
+{period:'2023 – 2025',org:'Accenture',client:'Accenture — Global Organisation',title:'Global Technology Delivery Lead',
+tags:['310K+','~8K contracts','2,060 clients','GMC Member'],
+out:'Recovery engagements: profitability from negative to positive in 9 months',
+summary:'Governed the delivery management and execution function for Accenture’s entire technology delivery organisation, driving AI-first delivery reinvention and complex-engagement recovery.',
+points:['Governed delivery across 310K+ professionals, ~8K contracts and 2,060 clients; 2,200+ go-lives annually','Drove AI-first delivery reinvention via Platform Engineering and a New Style of IT','Spearheaded the Agentic-AI Digital Thread to reinvent delivery methodology (30–50% efficiency)','Certified Quality Assurance Director; personally led complex delivery, QA and recovery — profitability from negative to positive in 9 months','Launched Gen AI industrialisation: trained 310K+ professionals in 18 months; GMC member shaping technology strategy']},
+{period:'2023 – 2025',org:'Accenture',client:'FedEx · Roche · Unilever · NPSS',title:'Complex Delivery QA / Executive Sponsor',
+tags:['7,000+ FTE engagements','Vendor consolidation','System Integration','Gen AI'],
+out:'36% TCO reduction; $1B IT run-rate reduction; targeting 65%+ productivity in 5 years',
+summary:'Quality Assurance Director and Executive Sponsor ensuring successful delivery for large-scale, complex engagements — vendor consolidation, hostile-environment transitions and AI-led transformation.',
+points:['Ramp-up of 2K → 7K FTE engagements; knowledge transition in a hostile environment cut from 5 months to 2','Helping clients achieve 36% TCO reduction and ~$1B IT run-rate reduction','Vendor consolidation and knowledge transition from 5+ incumbents','50% critical-incident reduction; 40–50% faster ticket resolution via AI-led automation','GenWizard Accenture assets and Gen AI ecosystem adoption; targeting 65%+ productivity over 5 years']},
+{period:'2016 – 2025',org:'Accenture',client:'Accenture Technology Center in India — 125K+',aitag:'GenAI · Agentic AI',title:'Delivery Transformation, Innovation Hub & GenAI',
+tags:['GenAI','Innovation Hub','Automation','DevOps'],
+out:'310K+ trained on Gen AI; 60+ CxO delegations; $1B+ pipeline',
+summary:'Led the transformation of Accenture’s largest Technology Center — industrialising GenAI across the workforce, running the Innovation Hub as a global co-creation engine, and scaling Automation, Agile and DevOps.',
+points:['Gen AI industrialisation: multi-level curriculum; 310,000+ professionals trained in 18 months','ATCI Innovation Hub: 60+ global CxO delegations; 40+ co-creation sessions generating $1B+ pipeline','Drove Automation, Agile and DevOps adoption across 125,000+ ATCI professionals']},
+{period:'2013 – 2018',org:'Accenture',client:'FS North America — Insurance, then Banking & Capital Markets',title:'FS North America — Insurance, Banking & Capital Markets Portfolio',
+tags:['$180M+ revenue','3,500+ FTEs','Managed Services'],
+out:'$180M+ revenue; profitability consistently 3% above target',
+summary:'Ran one of Accenture’s largest FS portfolios — starting with 7 US insurance engagements (incl. 2 Top-5 P&C carriers), then extending to Banking and Capital Markets NE.',
+points:['$180M+ revenue, 1,800+ FTEs; profitability consistently 3% above target','$75M P&C account: 200% growth (crossed 1,200 FTE) — highest-growing Insurance account in Accenture','$100M diamond client renewal; multi-channel integration and unified communications transformation','Banking & Capital Markets NE (2017–2018): 3,500+ resource portfolio; Consumer Finance recovery SME']},
+{period:'2009 – 2018',org:'Accenture',client:'Multiple FS & Insurance clients',title:'Complex Delivery, QA & Recovery Leadership',
+tags:['Recovery','QA','Turnaround','Profitability'],
+out:'Multiple recoveries to profit: +5% (Life), +3% (Mutual), red→green in 8 weeks (P&C), −63%→+20% (Consumer Finance)',
+summary:'A repeat recovery specialist and certified QA Director — restoring both delivery health and profitability across some of Accenture’s largest, most complex programmes.',
+points:['Life insurer: red → green in 2 months, termination avoided, profitability 5% above target, $1.5M change order','Mutual insurer: post-disaster SLA 50% → 98%+, profitability 3% above target','P&C insurer: escalated managed service red → green in 8 weeks, avoided major ramp-down','Consumer Finance: recovery lead for a 500TB DW, catch-up in 1.5 months, commercials −63% → +20%']},
+{period:'2011 – 2013',org:'Accenture',client:'Top-3 P&C Mutual Insurance Carrier, US',title:'P&C Mutual Insurance — SI & AO Delivery Lead',
+tags:['SI & AO','Cisco','Unified Comms','Distributed Agile'],
+out:'23,000+ PD, zero defects, 85K agents; won $3M competitor work; >100% growth',
+summary:'Delivery Unit Lead for a 1,000+ resource SI and AO engagement — including the largest global Cisco transformation of its time.',
+points:['Led a 1,000+ resource global Delivery Unit across 3 locations; >100% growth in 1 year (added 500 people)','Managed 3 SI transformation projects (400+ people) and AO (500+ people) across multiple technologies','Unified Communications (Cisco) — largest global Cisco transformation: 23,000+ PD, 13 releases, zero defects, 0.25 → 2.2 units/hr; 85,000 agents; won $3M competitor work; FS Client Excellence Award','Multi-channel Auto LOB (Distributed Agile): 45,000 PD, all US states, 25M+ customers, zero defects','Hosted 11 client visits; 10+ RFPs / solution plans for new opportunities']},
+{period:'2009 – 2011',org:'Accenture',client:'Top-3 P&C Insurance Carrier, US',title:'P&C Insurance — Application Outsourcing Delivery Lead',
+tags:['DevOps CoE','Analytics CoC','Ab Initio','Teradata'],
+out:'Margins 5% above target (2 yrs); DevOps CoE $10M savings; Analytics CoC $2M/yr',
+summary:'Delivery Unit Lead who grew a P&C Application Outsourcing engagement from 200+ to 1,000+ resources across 15 multi-technology projects, establishing DevOps and Analytics centres of excellence.',
+points:['Grew a global Delivery Unit from 200+ to 1,000+ resources across 15 multi-technology projects; margins 5% above target for two consecutive years','Established a centralised DevOps CoE with an industry-first Service Catalog pricing model — $10M programme savings over 5 years','Established an Analytics Competency Centre — $2M/yr client savings via accountable outcome models','DW/BI SME for 20+ client visits and orals; 15+ RFP responses; >40% growth in 1.5 years','Ab Initio Community of Practice lead at Accenture India Delivery Center']}
+]},
+
+{id:'atc',icon:'ti-building',color:'#7F77DD',title:'ATC Global Network Lead',period:'Sep 2025 – present',cardm:'~30 centers · 310K prof.',
+headline:'Leads Accenture’s global network of ~30 Technology Centers — 310K professionals across India, Philippines, EMEA and Americas — driving AI-rotation across workforce, workbench and work.',
+summary:'A GMC-member role leading Accenture Technology Centers worldwide: ~30 centers, 310K professionals and 10K+ delivery contracts. Driving talent transformation and Gen/Agentic AI adoption across the workforce, the workbench (assets and ecosystem) and the work itself.',
+kpis:[{n:'~30',l:'Technology Centers globally'},{n:'310K',l:'technology professionals led'},{n:'77%',l:'Gen AI adoption, up from <1%'}],
+projects:[
+{period:'Sep 2025 – present',org:'Accenture',client:'~30 Accenture Technology Centers globally',aitag:'GenAI · Agentic AI',title:'Global Accenture Technology Centers — GMC Member Role',
+tags:['~30 centers','Gen AI','Agentic AI','AI-DLC','Innovation Hubs'],
+out:'Gen AI adoption scaled from <1% to 77%+ in 3 years; 2× productivity via AI-DLC',
+summary:'Manages ~30 centers across India, Philippines, EMEA and Americas — 310K professionals and ~10K delivery contracts — leading talent transformation and new AI-led ways of working.',
+points:['Part of the Global Management Committee (GMC — top 0.006%)','Manages 30+ centers across India, Philippines, EMEA and Americas — 310K professionals, ~10K delivery contracts','2,000+ client visits/year from the Innovation Hubs; $3–5B sales originations per year','Gen/Agentic AI 4-level role-based training: 304K Gen AI Foundation, 285K Gen AI Advanced, 165K+ Agentic AI Frameworks','Gen AI adoption scaled from <1% to 77%+ in 3 years; AI-DLC ways of working driving 2× productivity and 30% faster releases']}
+]}
+];
+
+var sel='data',pinned=true;
+var app=document.getElementById('app');
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function role(id){return R.find(function(x){return x.id===id})}
+
+function heroHtml(){
+return '<div class="hero"><div class="hero-rib"></div><div class="hero-top"><div class="av">AK</div>'+
+'<div><div class="h-nm">Aditi Kulkarni</div>'+
+'<div class="h-tt">Senior Managing Director &amp; GMC Member · Accenture</div>'+
+'<div class="h-vo">Techno-functional leader across data &amp; AI architecture, platform engineering and global delivery — 24 years at Accenture (27 total), now leading its global network of ~30 Technology Centers.</div></div></div>'+
+'<div class="ribbon">'+
+rib('ti-users-group','310K+','Professionals led globally','ATC Global Network Lead')+
+rib('ti-coin','$33B','Annual sales influenced','Global Technology Solutions Lead')+
+rib('ti-database','10+','Fortune 500 data strategies','Master Data Architect')+
+rib('ti-stack-2','6','Platforms launched','Global Asset Engineering Lead')+
+rib('ti-bulb','69','Patents (32 granted)','')+
+rib('ti-trophy','7+','Leadership awards','')+
+'</div></div>';
+}
+function rib(ic,n,l,role){return '<div class="rib"><div class="rib-ic"><i class="ti '+ic+'" aria-hidden="true"></i></div><div class="rib-n">'+esc(n)+'</div><div class="rib-l">'+esc(l)+(role?'<span class="rib-role">('+esc(role)+')</span>':'')+'</div></div>'}
+
+function journeyHtml(){
+var cards=R.map(function(r){var on=r.id===sel;
+var head=(r.from?'<div class="rcard-from">'+esc(r.from)+' →</div>':'')+'<div class="rcard-t">'+esc(r.title)+'</div>';
+return '<div class="rcard" onclick="pick(\''+r.id+'\')" style="background:'+r.color+(on?'2e':'17')+';border-color:'+(on?r.color:r.color+'66')+';border-width:'+(on?'2px':'1.5px')+'">'+
+'<div class="rcard-ic" style="color:'+r.color+'"><i class="ti '+r.icon+'" aria-hidden="true"></i></div>'+
+head+'<div class="rcard-y">'+esc(r.period)+'</div>'+
+'<div class="rcard-m" style="border-top:0.5px solid '+r.color+'40">'+esc(r.cardm)+'</div></div>';}).join('');
+return '<div class="journey"><div class="sect">Career journey · companies and roles</div>'+
+'<div class="eras">'+
+'<div class="era"><div class="era-c">NSE.IT</div><div class="era-y">1998 – 2000</div></div>'+
+'<div class="era-ar"><i class="ti ti-chevron-right" aria-hidden="true"></i></div>'+
+'<div class="era"><div class="era-c">SAS Global Services</div><div class="era-y">2000 – 2002</div></div>'+
+'<div class="era-ar"><i class="ti ti-chevron-right" aria-hidden="true"></i></div>'+
+'<div class="era acc" style="background:'+CE.era+'14;border-color:'+CE.era+'55"><div class="era-c" style="color:'+CE.era+'">Accenture</div><div class="era-y" style="color:'+CE.era+'">2002 – present · Senior Managing Director &amp; GMC Member</div></div>'+
+'</div><div class="roles">'+cards+'</div></div>';
+}
+
+function paneHtml(){
+var certAcc=['Enterprise Solution Architect','Master Data Architect','Master Automation Architect','Senior Technology Architect','SI / AMS Delivery Lead','Quality Assurance Director','Elite Client Quality Lead'];
+var certEx=['AI Engineer — Gen AI, Agentic AI, MLOps','Gen AI with LLMs','AWS Cloud Practitioner','Big Data Professional','ML Professional','GCP Cloud Practitioner','SAFe Agilist','TDWI BI Professional','INS 21 — AICPCU'];
+var awards=[['Innovator Award × 4','2019 – present'],['Best Client Recovery','2017'],['Technology Delivery Lead','2016'],['Technology Expert','2015'],['Best Initiative','2015'],['FS Client Excellence — DevOps','2015'],['FS Client Excellence — Unified Comms','2014']];
+var keynotes=['Splunk','AWS re:Invent','CAST','TechGig','ET.CIO','CXO Today','DevSecOps Days','Accenture Symposium — Japan','France','Atlanta','CII','ICAI'];
+var analysts=['Gartner','Everest','HfS','IDC MarketScape','ISG'];
+var vid='<a class="vid" href="'+esc(VIDEO_URL)+'" target="_blank" rel="noopener"><i class="ti ti-brand-facebook" aria-hidden="true"></i><span><span class="vt">Tech Leadership video</span> · Women in Tech · <strong style="color:#fff">33K+</strong> views <i class="ti ti-external-link" aria-hidden="true" style="font-size:11px"></i></span></a>';
+return '<aside id="pane">'+
+'<div class="pane-h"><span class="pane-ht">Recognition &amp; skills</span><button class="iconbtn" onclick="togglePin()" title="Hide panel" aria-label="Hide panel"><i class="ti ti-layout-sidebar-left-collapse" aria-hidden="true"></i></button></div>'+
+'<div class="hl"><div class="plabel"><i class="ti ti-school" aria-hidden="true"></i>Education</div>'+
+'<div class="edu"><div class="edu-ic"><i class="ti ti-award" aria-hidden="true"></i></div><div><div class="edu-d">BE Computer Science</div><div class="edu-i">Mumbai University · 1998</div><div class="edu-n">Gold Medallist — University Top Rank</div></div></div>'+
+'<div class="edu"><div class="edu-ic"><i class="ti ti-brain" aria-hidden="true"></i></div><div><div class="edu-d">Masters in AI &amp; Machine Learning</div><div class="edu-i">IIIT-Bangalore &amp; Liverpool John Moores University · Gen AI Specialisation</div><div class="edu-n">Pursuing (May 2025 – present)</div></div></div></div>'+
+vid+
+'<div class="hl"><div class="plabel"><i class="ti ti-bulb" aria-hidden="true"></i>Patents &amp; publications</div>'+
+'<div class="pat"><div class="pk"><div class="pk-n">69</div><div class="pk-l">Filed</div></div><div class="pk"><div class="pk-n">32</div><div class="pk-l">Granted</div></div><div class="pk"><div class="pk-n">3</div><div class="pk-l">Papers</div></div></div></div>'+
+'<div class="hl"><div class="plabel"><i class="ti ti-trophy" aria-hidden="true"></i>Leadership awards · 7+ in 7 yrs</div>'+
+awards.map(function(a){return'<div class="aw"><i class="ti ti-trophy" aria-hidden="true"></i><span class="aw-t">'+esc(a[0])+'</span><span class="aw-m">'+esc(a[1])+'</span></div>'}).join('')+'</div>'+
+'<div class="hl"><div class="plabel"><i class="ti ti-microphone" aria-hidden="true"></i>Keynotes · 12 global events</div>'+
+'<div class="chips">'+keynotes.map(function(k){return'<span class="chip">'+esc(k)+'</span>'}).join('')+'</div>'+
+'<div class="pgrp">Analyst forums</div><div class="chips">'+analysts.map(function(a){return'<span class="chip">'+esc(a)+'</span>'}).join('')+'</div></div>'+
+'<div class="plabel"><i class="ti ti-certificate" aria-hidden="true"></i>Certifications · Accenture</div>'+
+'<div class="chips">'+certAcc.map(function(c){return'<span class="chip">'+esc(c)+'</span>'}).join('')+'</div>'+
+'<div class="pgrp">External &amp; industry</div><div class="chips">'+certEx.map(function(c){return'<span class="chip">'+esc(c)+'</span>'}).join('')+'</div>'+
+'<div id="sklwrap" class="col">'+
+'<div class="plabel tog" onclick="tskl()"><i class="ti ti-stack-2" aria-hidden="true"></i>Skills &amp; specializations<i class="ti ti-chevron-down chev-skl" aria-hidden="true"></i></div>'+
+'<div class="skl-summary">Data &amp; AI Engineering · Machine Learning · Deep Learning · Gen AI · Agentic AI · Cloud &amp; Platforms · Leadership</div>'+
+'<div class="skl-body">'+SKILLS.map(function(s){return '<div class="pgrp">'+esc(s.g)+'</div><div class="chips">'+s.items.map(function(it){return'<span class="chip">'+esc(it)+'</span>'}).join('')+'</div>'}).join('')+'</div>'+
+'</div>'+
+'</aside>';
+}
+
+function detailHtml(){
+var r=role(sel);var c=r.color;
+var titleHtml=r.from?('<span class="d-from">'+esc(r.from)+'</span><span class="d-arrow">→</span>'+esc(r.title)):esc(r.title);
+var body='<div class="kpi">'+r.kpis.map(function(k){return'<div class="kp" style="background:'+c+'17;border:0.5px solid '+c+'40"><div class="kn">'+esc(k.n)+'</div><div class="kl">'+esc(k.l)+'</div></div>'}).join('')+'</div>'+
+'<div class="eng-h">Engagements &amp; projects — click to expand</div>'+
+r.projects.map(function(p){
+var ai=p.aitag?'<span class="eng-ai"><i class="ti ti-brain" aria-hidden="true" style="font-size:9px"></i> '+esc(p.aitag)+'</span>':'';
+var plus=p.plus1?'<span class="eng-plus">+1 role</span>':'';
+var out=p.out?'<div class="eng-out"><i class="ti ti-trending-up" aria-hidden="true"></i><span>'+esc(p.out)+'</span></div>':'';
+var tags=p.tags?'<div class="eng-tags">'+p.tags.map(function(t){return'<span class="etag">'+esc(t)+'</span>'}).join('')+'</div>':'';
+return '<div class="eng" style="background:'+c+'0d;border-color:'+c+'3a"><div class="eng-top" onclick="tp(this)">'+
+'<div class="eng-strip" style="background:'+c+'"></div>'+
+'<div class="eng-main"><div class="eng-p">'+esc(p.period)+'</div><div class="eng-t">'+esc(p.title)+'</div><div class="eng-c">'+esc(p.client)+'</div>'+out+tags+'</div>'+
+'<div class="eng-side">'+ai+plus+'<span class="eng-org">'+esc(p.org)+'</span><i class="ti ti-chevron-down eng-chev" aria-hidden="true"></i></div>'+
+'</div><div class="eng-body"><div class="eng-sum">'+esc(p.summary)+'</div>'+
+'<ul class="dl">'+p.points.map(function(pt){return'<li style="border-bottom:0.5px solid '+c+'22"><span style="position:absolute;left:3px;top:9px;width:6px;height:6px;border-radius:50%;background:'+c+'"></span>'+esc(pt)+'</li>'}).join('')+'</ul></div></div>';
+}).join('');
+return '<section id="detailArea">'+(pinned?'':'<button class="reopen" onclick="togglePin()"><i class="ti ti-menu-2" aria-hidden="true"></i>Show recognition &amp; skills</button>')+
+'<div class="detail" style="background:'+c+'0f;border-color:'+c+'40;border-top-color:'+c+'">'+
+'<div class="d-r">'+esc(r.period)+'</div>'+
+'<div class="d-t">'+titleHtml+'</div>'+
+'<div class="d-h" style="background:'+c+'1c">'+esc(r.headline)+'</div>'+
+'<div class="d-s">'+esc(r.summary)+'</div>'+body+'</div></section>';
+}
+
+function render(){app.innerHTML=heroHtml()+journeyHtml()+paneHtml()+detailHtml();}
+function pick(id){sel=id;
+document.querySelectorAll('.rcard').forEach(function(el,i){var rr=R[i];var on=rr.id===id;
+el.style.background=rr.color+(on?'2e':'17');el.style.borderColor=on?rr.color:rr.color+'66';el.style.borderWidth=on?'2px':'1.5px';});
+document.getElementById('detailArea').outerHTML=detailHtml();
+}
+function tp(el){el.parentNode.classList.toggle('open');}
+function tskl(){document.getElementById('sklwrap').classList.toggle('col');}
+function togglePin(){pinned=!pinned;app.className=pinned?'pinned':'unpinned';document.getElementById('detailArea').outerHTML=detailHtml();}
+render();
+</script>
+</body>
+</html>
